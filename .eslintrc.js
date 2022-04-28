@@ -24,5 +24,6 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'react/props-types': 'off',
     'react/jsx-no-bind': 'off',
+    'comma-dangle': 'off',
   },
 };
