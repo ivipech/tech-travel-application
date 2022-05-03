@@ -1,8 +1,13 @@
 import React from 'react';
-import './styles.css';
+import { Title, Subtitle } from './styles';
 
 const Home = () => {
-  return <h1>Home</h1>;
+  return (
+    <>
+      <Title>Home</Title>
+      <Subtitle>Esta es mi casa</Subtitle>
+    </>
+  );
 };
 
 export default Home;
