@@ -23,4 +23,16 @@ body{
 body, input, button {
   font-family: 'Montserrat', snas-serif;
 }
+
+a{
+  text-decoration: none; 
+}
+
+ul{
+  list-style:none;
+}
+
+button{
+  cursor: pointer;
+}
 `;
