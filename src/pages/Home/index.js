@@ -1,7 +1,7 @@
 import React from 'react';
 import { Title, Subtitle } from './styles';
 
-const Home = () => {
+function Home() {
   return (
     <>
       <Title>Home</Title>
@@ -13,6 +13,6 @@ const Home = () => {
       </ul>
     </>
   );
-};
+}
 
 export default Home;
