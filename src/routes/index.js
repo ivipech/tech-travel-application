@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Cart from '../pages/Cart';
 import Home from '../pages/Home';
 
+// eslint-disable-next-line func-names
 const Routing = function () {
   return (
     <Routes>

@@ -16,12 +16,12 @@ html, body, #root {
 }
 
 body{
-  background-color: #f6f7fb;
+  background-color: #000;
   -webkit-font-smoothing: antialiased;
 }
 
 body, input, button {
-  font-family: 'Montserrat', snas-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 a{
