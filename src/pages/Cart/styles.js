@@ -67,3 +67,7 @@ export const Subtotal = styled.div`
     margin-right: 10px;
   }
 `;
+
+export const Total = styled.div`
+  border: 1px solid #050418;
+`;
