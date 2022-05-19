@@ -13,28 +13,32 @@ import {
 
 function Cart() {
   const { state, setState } = useContext(CartContext);
+  let j = 0;
   return (
     <Container>
       <ContainerList>
-        {state.cart.map((el) => (
-          <TravelItem>
-            <img src={el.photo} alt={el.title} />
-            <Info>
-              <p>{el.title}</p>
-              <strong>{el.price}</strong>
-            </Info>
-            <Quantity readOnly type="number" value={el.quantity} />
-            <Subtotal>
-              <p>{el.quantity * el.price}</p>
-              <button type="button">
-                <MdDelete size={24} color="#0676d9" />
-              </button>
-            </Subtotal>
-          </TravelItem>
-        ))}
+        {state.cart.map((el) => {
+          j += el.quantity * el.price;
+          return (
+            <TravelItem>
+              <img src={el.photo} alt={el.title} />
+              <Info>
+                <p>{el.title}</p>
+                <strong>{el.price}</strong>
+              </Info>
+              <Quantity readOnly type="number" value={el.quantity} />
+              <Subtotal>
+                <p>{el.quantity * el.price}</p>
+                <button type="button">
+                  <MdDelete size={24} color="#0676d9" />
+                </button>
+              </Subtotal>
+            </TravelItem>
+          );
+        })}
         <Total>
-          <span>Total</span>
-          <span>250</span>
+          <p>TOTAL: </p>
+          <span>$ {j}</span>
         </Total>
       </ContainerList>
     </Container>

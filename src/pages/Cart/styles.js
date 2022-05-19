@@ -12,7 +12,7 @@ export const ContainerList = styled.ul`
   justify-content: center;
   border-radius: 5px;
   padding: 36px 44px;
-  aling-items: center;
+  align-items: center;
   margin-top: 45px;
   max-width: 958px;
 `;
@@ -69,5 +69,20 @@ export const Subtotal = styled.div`
 `;
 
 export const Total = styled.div`
-  border: 1px solid #050418;
+  display: flex;
+  align-items: end;
+  justify-content: right;
+  font-weight: 600;
+  font-family: Montserrat, sans-serif;
+
+  p {
+    margin: 10px;
+    font-size: 16px;
+    color: #666;
+  }
+
+  span {
+    margin: 10px;
+    font-size: 24px;
+  }
 `;
