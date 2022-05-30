@@ -10,7 +10,7 @@ export const Container = styled.header`
 export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  aling-items: center;
+  align-items: center;
   width: 100%;
   max-width: 958px;
   img {
@@ -20,14 +20,14 @@ export const HeaderContainer = styled.div`
 
 export const Cart = styled.div`
   display: flex;
-  aling-items: center;
+  align-items: center;
 
   div {
     background-color: #fff;
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    marging-right: 10px;
+    margin-right: 10px;
     display: flex;
     align-items: center;
     justify-content: center;

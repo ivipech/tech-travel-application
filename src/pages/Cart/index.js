@@ -13,6 +13,21 @@ import {
 
 function Cart() {
   const { state, setState } = useContext(CartContext);
+
+  function handleDeleteCart(travel) {
+    const copyCart = [...state.cart];
+    const travelIndex = copyCart.findIndex((el) => el.id === travel.id);
+    copyCart[travelIndex].quantity -= 1;
+
+    if (copyCart[travelIndex].quantity === 0) {
+      copyCart.splice(travelIndex, 1);
+    }
+
+    setState({
+      cart: copyCart,
+    });
+  }
+
   let j = 0;
   return (
     <Container>
@@ -29,7 +44,7 @@ function Cart() {
               <Quantity readOnly type="number" value={el.quantity} />
               <Subtotal>
                 <p>{el.quantity * el.price}</p>
-                <button type="button">
+                <button type="button" onClick={() => handleDeleteCart(el)}>
                   <MdDelete size={24} color="#0676d9" />
                 </button>
               </Subtotal>

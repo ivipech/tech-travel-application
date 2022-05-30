@@ -9,6 +9,8 @@ import { Container, HeaderContainer, Cart } from './styles';
 function Header() {
   const { setState, state } = useContext(CartContext);
 
+  const totalquantity2 = state.cart;
+
   const totalquantity = state.cart.reduce(
     (acc, travel) => acc + travel.quantity,
     0

@@ -63,7 +63,7 @@ export const Unit = styled.li`
 
     span {
       flex: 1;
-      text-aling: center;
+      text-align: center;
       font-weight: 600;
     }
   }
