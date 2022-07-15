@@ -10,6 +10,7 @@ import {
   Subtotal,
   Total,
 } from './styles';
+import Newsletter from '../../components/newsletter';
 
 function Cart() {
   const { state, setState } = useContext(CartContext);
@@ -30,33 +31,36 @@ function Cart() {
 
   let j = 0;
   return (
-    <Container>
-      <ContainerList>
-        {state.cart.map((el) => {
-          j += el.quantity * el.price;
-          return (
-            <TravelItem>
-              <img src={el.photo} alt={el.title} />
-              <Info>
-                <p>{el.title}</p>
-                <strong>{el.price}</strong>
-              </Info>
-              <Quantity readOnly type="number" value={el.quantity} />
-              <Subtotal>
-                <p>{el.quantity * el.price}</p>
-                <button type="button" onClick={() => handleDeleteCart(el)}>
-                  <MdDelete size={24} color="#0676d9" />
-                </button>
-              </Subtotal>
-            </TravelItem>
-          );
-        })}
-        <Total>
-          <p>TOTAL: </p>
-          <span>$ {j}</span>
-        </Total>
-      </ContainerList>
-    </Container>
+    <>
+      <Container>
+        <ContainerList>
+          {state.cart.map((el) => {
+            j += el.quantity * el.price;
+            return (
+              <TravelItem>
+                <img src={el.photo} alt={el.title} />
+                <Info>
+                  <p>{el.title}</p>
+                  <strong>{el.price}</strong>
+                </Info>
+                <Quantity readOnly type="number" value={el.quantity} />
+                <Subtotal>
+                  <p>{el.quantity * el.price}</p>
+                  <button type="button" onClick={() => handleDeleteCart(el)}>
+                    <MdDelete size={24} color="#0676d9" />
+                  </button>
+                </Subtotal>
+              </TravelItem>
+            );
+          })}
+          <Total>
+            <p>TOTAL: </p>
+            <span>$ {j}</span>
+          </Total>
+        </ContainerList>
+      </Container>
+      <Newsletter theme="orange" />
+    </>
   );
 }
 
