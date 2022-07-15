@@ -8,39 +8,34 @@ import { Container, HeaderContainer, Cart } from './styles';
 
 function Header() {
   const { state, setState } = useContext(CartContext);
+  const [cart, setCart] = useState('');
 
   const totalquantity = state.cart.reduce(
     (acc, travel) => acc + travel.quantity,
     0
   );
 
-  const CART_DEFAULT = (
-    <Cart>
-      <div>
-        <span>{totalquantity}</span>
-      </div>
-      <FaShoppingCart size={36} color="#fff" />
-    </Cart>
-  );
-  const [cart, setCart] = useState(CART_DEFAULT);
-
-  const borrarCaritoHnadler = () => {
-    console.log('Borrando carrito');
-    setCart(<Cart />);
+  const borrarCarritoHnadler = () => {
+    setCart('cart');
   };
 
-  const regresarCarrito = () => {
-    setCart(CART_DEFAULT);
+  const mostrarCarritoHnadler = () => {
+    setCart('');
   };
 
   return (
     <Container>
       <HeaderContainer>
-        <Link to="/" onClick={regresarCarrito}>
+        <Link to="/" onClick={mostrarCarritoHnadler}>
           <img src={logo} alt="Logo" />
         </Link>
-        <Link to="/cart" onClick={borrarCaritoHnadler}>
-          {cart}
+        <Link to="/cart" onClick={borrarCarritoHnadler}>
+          <Cart className={cart}>
+            <div>
+              <span>{totalquantity}</span>
+            </div>
+            <FaShoppingCart size={36} color="#fff" />
+          </Cart>
         </Link>
       </HeaderContainer>
     </Container>

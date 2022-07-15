@@ -8,6 +8,9 @@ export const Container = styled.header`
 `;
 
 export const HeaderContainer = styled.div`
+  .cart {
+    display: none;
+  }
   display: flex;
   justify-content: space-between;
   align-items: center;
